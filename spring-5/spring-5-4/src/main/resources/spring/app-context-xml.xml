@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="singer" class="com.drips.base.ch3.Singer" scope="prototype"/>
+    <bean id="abstractLookupBean" class="com.drips.base.ch3.AbstractLookUpDemoBean">
+        <lookup-method name="getMySinger" bean="singer"/>
+    </bean>
+    <bean id="standardLookupBean" class="com.drips.base.ch3.StandardLookUpDemoBean">
+        <property name="mySinger" ref="singer"/>
+    </bean>
+
+</beans>
