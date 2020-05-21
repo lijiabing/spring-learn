@@ -11,6 +11,7 @@
     <name>spring5-parent</name>
     <modules>
         <module>spring-5-4</module>
+        <module>java-8</module>
     </modules>
 
     <properties>
