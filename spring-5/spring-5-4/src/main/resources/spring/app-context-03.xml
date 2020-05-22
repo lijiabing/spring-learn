@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="fooOne" class="com.drips.base.ch3.Foo"/>
+    <bean id="barOne" class="com.drips.base.ch3.Bar"/>
+    <bean id="targetByType" autowire="byType" class="com.drips.base.ch3.Target" lazy-init="true"/>
+    <bean id="targetByName" autowire="byName" class="com.drips.base.ch3.Target" lazy-init="true"/>
+    <bean id="targetConstructor" autowire="constructor" class="com.drips.base.ch3.Target" lazy-init="true"/>
+
+</beans>
