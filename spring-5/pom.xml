@@ -12,6 +12,7 @@
     <modules>
         <module>spring-5-4</module>
         <module>java-8</module>
+        <module>interview</module>
     </modules>
 
     <properties>
