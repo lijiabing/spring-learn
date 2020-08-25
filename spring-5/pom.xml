@@ -13,11 +13,15 @@
         <module>spring-5-4</module>
         <module>java-8</module>
         <module>interview</module>
+        <module>hibernate-usage</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-boot-version>2.2.6.RELEASE</spring-boot-version>
+        <hibernate.version>5.4.7.Final</hibernate.version>
+        <hibernate.validator.version>6.1.0.Final</hibernate.validator.version>
+        <mysql-connector-version>5.1.46</mysql-connector-version>
     </properties>
 
     <dependencyManagement>
@@ -28,6 +32,22 @@
                 <version>${spring-boot-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+                <version>${mysql-connector-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
