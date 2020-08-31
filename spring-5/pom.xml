@@ -14,6 +14,7 @@
         <module>java-8</module>
         <module>interview</module>
         <module>hibernate-usage</module>
+        <module>drips-network-disk</module>
     </modules>
 
     <properties>
@@ -22,6 +23,7 @@
         <hibernate.version>5.4.7.Final</hibernate.version>
         <hibernate.validator.version>6.1.0.Final</hibernate.validator.version>
         <mysql-connector-version>5.1.46</mysql-connector-version>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencyManagement>
@@ -48,6 +50,16 @@
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-validator</artifactId>
                 <version>${hibernate.validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
