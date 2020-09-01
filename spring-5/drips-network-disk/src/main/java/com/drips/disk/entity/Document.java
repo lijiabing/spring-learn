@@ -7,12 +7,13 @@ import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @ApiModel(value = "文件")
 @Table(name = "DOCUMENT")
 @Entity
-public class Document {
+public class Document implements Serializable {
 
     @ApiModelProperty(value = "主键id", required = true, dataType = "Long")
     @Id
@@ -116,4 +117,6 @@ public class Document {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+
 }

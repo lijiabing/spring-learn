@@ -2,18 +2,23 @@
 package com.drips.disk.entity;
 
 
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.JsonSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.jsonschema.JsonSerializableSchema;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @ApiModel(value = "目录")
 @Table(name = "DIRECTORY")
 @Entity(name = "Directory")
-public class Directory {
+public class Directory implements Serializable {
 
     @ApiModelProperty(value = "主键id", required = true, dataType = "Long")
     @Id
@@ -39,13 +44,13 @@ public class Directory {
     @OneToMany(targetEntity = Document.class, cascade = {CascadeType.PERSIST, CascadeType.MERGE},
             fetch = FetchType.LAZY, mappedBy = "directory", orphanRemoval = true
     )
-//    @Column(name = "DOCUMENT_ID")
+    @JsonIgnore
     private List<Document> documentList;
     @ApiModelProperty(value = "子目录列表")
     @OneToMany(targetEntity = Directory.class, cascade = {CascadeType.PERSIST, CascadeType.MERGE},
             fetch = FetchType.LAZY, mappedBy = "parentDirectory", orphanRemoval = true
     )
-//    @Column(name = "CHILD_DIR_ID")
+    @JsonIgnore
     private List<Directory> directoryList;
 
 
